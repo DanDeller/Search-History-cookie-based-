@@ -20,8 +20,8 @@ function setSearchHistory() {
 
 		// grab input values 
 		var firstName = $('#form-advanced-search--first_name').val(),
-				lastName  = $('#form-advanced-search--last_name').val(),
-				state     = $('#form-advanced-search--state').val();
+		    lastName  = $('#form-advanced-search--last_name').val(),
+		    state     = $('#form-advanced-search--state').val();
 
 		// create string to store values for new cookie
 		var storeAll = firstName + '-' + lastName + '-' + state;

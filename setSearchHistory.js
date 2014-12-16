@@ -1,8 +1,8 @@
 function setSearchHistory() {
 
 	/*\
-	 *	SearchHistory function to capture user searches and store them
-	 *      into a cookie for later use.
+	 *   SearchHistory function to capture user searches and store them
+	 *   into a cookie for later use.
 	 *
 	 *   The rest of the JS to pull the data can be found in the 
 	 *   reg page JS file.

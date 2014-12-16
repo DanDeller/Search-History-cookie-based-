@@ -17,7 +17,6 @@ function setSearchHistory() {
 	var cookieArray = [];
 
 	$('.btn-search').on('click', function(e) {
-		e.preventDefault();
 
 		// grab input values 
 		var firstName = $('#form-advanced-search--first_name').val(),

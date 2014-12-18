@@ -21,32 +21,67 @@ function readSearchHistory() {
 
 		// create a div for each search box
 		var divIt = document.createElement('div');
-		    divIt.className = 'searchIt';
-		    searchBox.appendChild(divIt);
+			divIt.className = 'searchIt';
+			searchBox.appendChild(divIt);
 
 		// create close icon for each search box
 		var closeIt = document.createElement('p');
-		    closeIt.className = 'closeIt';
-		    closeIt.innerHTML = 'x';
-		    divIt.appendChild(closeIt);
+			closeIt.className = 'closeIt';
+			closeIt.innerHTML = 'x';
+			divIt.appendChild(closeIt);
 
 		// create a text node for each search box
 		var textIt = document.createElement('p');
-		    textIt.className = 'textIt';
-		    textIt.innerHTML = cleaner;
-		    divIt.appendChild(textIt);
+			textIt.className = 'textIt';
+			textIt.innerHTML = cleaner;
+			divIt.appendChild(textIt);
 	}
 
-	// controls to move the boxes around to see all of your searches
-	$('.arrow-left').on('click', function() {
-		$('#search-holder').animate({'left' : '+=70px'});
-	});
+	// if cookieArray is 3 or less, hide the arrows
+	if (cookiesArray.length <= 3) {
+		$('.arrow-left, .arrow-right').hide();
+	}
+
+	// controls to move the boxes around to see all of your searches(super hacky)
+	var tracker = 2,
+	    cNumber = cookiesArray.length;
+
+	// hide of show right arrow to prevent user from scrolling outside of the container
 	$('.arrow-right').on('click', function() {
-		$('#search-holder').animate({'left' : '-=70px'});
+		$('#search-holder').animate({'left' : '-=100px'});
+		tracker++;
+		if (tracker === cNumber) {
+			$('.arrow-right').fadeOut();
+		}
+		if (tracker > 0) {
+			$('.arrow-left').fadeIn();
+		}
+	});
+
+// hide of show left arrow to prevent user from scrolling outside of the container
+	$('.arrow-left').on('click', function() {
+		$('#search-holder').animate({'left' : '+=100px'});
+		tracker--;
+		if (tracker === 1) {
+			$('.arrow-left').fadeOut();
+		}
+		if (tracker < cNumber) {
+			$('.arrow-right').fadeIn();
+		}
 	});
 
 	// control to close each box if clicked
+	var count = 3;
 	$('.searchIt').on('click', function() {
+		count++;
+		tracker++;
+		// if user hides all but 3 or less items, remove scrolling arrows
+		var minus = cookiesArray.length;
+		if (minus <= count) {
+			$('.arrow-left, .arrow-right').hide(function() {
+				$('#search-holder').animate({'left' : '0'});
+			});
+		}
 		$(this).fadeOut();
 	});
 } // end readSearchHistory()

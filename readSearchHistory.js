@@ -1,3 +1,11 @@
+// check to see if cookie has been set
+if (getCookie('searchHistory')) {
+	readSearchHistory();
+} else {
+	$('.search').hide();
+	$('.profile').css({'min-height' : '100px'});
+}
+
 function readSearchHistory() {
 
 	/*\
@@ -44,7 +52,7 @@ function readSearchHistory() {
 
 	// controls to move the boxes around to see all of your searches(super hacky)
 	var tracker = 2,
-	    cNumber = cookiesArray.length;
+		cNumber = cookiesArray.length;
 
 	// hide of show right arrow to prevent user from scrolling outside of the container
 	$('.arrow-right').on('click', function() {
@@ -85,4 +93,3 @@ function readSearchHistory() {
 		$(this).fadeOut();
 	});
 } // end readSearchHistory()
-readSearchHistory();

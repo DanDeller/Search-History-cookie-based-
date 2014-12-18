@@ -66,7 +66,7 @@ function readSearchHistory() {
 		}
 	});
 
-// hide of show left arrow to prevent user from scrolling outside of the container
+	// hide of show left arrow to prevent user from scrolling outside of the container
 	$('.arrow-left').on('click', function() {
 		$('#search-holder').animate({'left' : '+=100px'});
 		tracker--;

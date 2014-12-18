@@ -40,7 +40,7 @@ function readSearchHistory() {
 
 		// create a text node for each search box
 		var textIt = document.createElement('p');
-			textIt.className = 'textIt';
+		    textIt.className = 'textIt';
 			textIt.innerHTML = cleaner;
 			divIt.appendChild(textIt);
 	}

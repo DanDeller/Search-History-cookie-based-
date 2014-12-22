@@ -5,7 +5,7 @@ function setSearchHistory() {
 	 *   into a cookie for later use.
 	 *
 	 *   The rest of the JS to pull the data can be found in the 
-	 *   reg page JS file.
+	 *   readSearchHistory file.
 	 *
 	 *   - Submit form 
 	 *   - Check whether searchHistory cookie exists

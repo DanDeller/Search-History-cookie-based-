@@ -12,7 +12,7 @@ function readSearchHistory() {
 	 *		SearchHistory function to capture user searches and store them
 	 *		into a cookie for later use.
 	 *
-	 *		The initial part of this JS is located in the report page JS file.
+	 *		The initial part of this JS is located in the setSearchHistory file.
 	\*/
 	
 	// read & split the cookies 

@@ -54,7 +54,7 @@ function readSearchHistory() {
 	var tracker = 2,
 		cNumber = cookiesArray.length;
 
-	// hide of show right arrow to prevent user from scrolling outside of the container
+	// hide or show right arrow to prevent user from scrolling outside of the container
 	$('.arrow-right').on('click', function() {
 		$('#search-holder').animate({'left' : '-=100px'});
 		tracker++;
@@ -66,7 +66,7 @@ function readSearchHistory() {
 		}
 	});
 
-	// hide of show left arrow to prevent user from scrolling outside of the container
+	// hide or show left arrow to prevent user from scrolling outside of the container
 	$('.arrow-left').on('click', function() {
 		$('#search-holder').animate({'left' : '+=100px'});
 		tracker--;

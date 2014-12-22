@@ -52,7 +52,7 @@ function readSearchHistory() {
 
 	// controls to move the boxes around to see all of your searches(super hacky)
 	var tracker = 2,
-		cNumber = cookiesArray.length;
+	    cNumber = cookiesArray.length;
 
 	// hide or show right arrow to prevent user from scrolling outside of the container
 	$('.arrow-right').on('click', function() {

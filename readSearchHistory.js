@@ -34,15 +34,15 @@ function readSearchHistory() {
 
 		// create close icon for each search box
 		var closeIt = document.createElement('p');
-				closeIt.className = 'closeIt';
-				closeIt.innerHTML = 'x';
-				divIt.appendChild(closeIt);
+		    closeIt.className = 'closeIt';
+		    closeIt.innerHTML = 'x';
+		    divIt.appendChild(closeIt);
 
 		// create a text node for each search box
 		var textIt = document.createElement('p');
 		    textIt.className = 'textIt';
-				textIt.innerHTML = cleaner;
-				divIt.appendChild(textIt);
+		    textIt.innerHTML = cleaner;
+		    divIt.appendChild(textIt);
 	}
 
 	// if cookieArray is 3 or less, hide the arrows

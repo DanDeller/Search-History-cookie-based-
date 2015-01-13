@@ -21,7 +21,7 @@ function readSearchHistory() {
 	var searchBox    = document.getElementById('search-holder');
 	var output       = ''; 
 
-	// iterate over each search and create page elements for each one
+// iterate over each search and create page elements for each one
 	for (var i = 0; i < cookiesArray.length; i++) {
 		// split up the string at the "-" mark
 		var clean = cookiesArray[i].split('-');
@@ -38,13 +38,13 @@ function readSearchHistory() {
 
 		// create output string 
 		output += '<div class="searchIt">' +
-					'<p class="nameIt">Name:</p>' +
-					'<p class="fName">' + cleanest[0] + '</p>' +
-					'<p class="lName">' + cleanest[1] + '</p>' +
-					'<p class="state">' + cleanest[2] + '</p>' +
-						<img src="/assets/shared/img/register/checkmark.png">' +
-					'<p class="reportIncluded">Report Included</p>' +
-				'</div>'
+								'<p class="nameIt">Name:</p>' +
+								'<p class="fName">' + cleanest[0] + '</p>' +
+								'<p class="lName">' + cleanest[1] + '</p>' +
+								'<p class="state">' + cleanest[2] + '</p>' +
+								'<img src="/assets/shared/img/register/checkmark.png">' +
+								'<p class="reportIncluded">Report Included</p>' +
+							'</div>'
 
 		// set output string to page element
 		searchBox.innerHTML = output;

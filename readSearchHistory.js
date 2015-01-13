@@ -61,8 +61,8 @@ function readSearchHistory() {
 
 	// hide or show right arrow to prevent user from scrolling outside of the container
 	$('.arrow-right').on('click', function() {
-		$('#search-holder').animate({'left' : '-=100px'});
-		tracker++;
+		$('#search-holder').animate({'left' : '-=100px'}); // 100px was just what I needed.
+		tracker++;					   // Some simple math against each div width will get your px's
 		if (tracker === cNumber) {
 			$('.arrow-right').fadeOut();
 		}
@@ -73,8 +73,8 @@ function readSearchHistory() {
 
 	// hide or show left arrow to prevent user from scrolling outside of the container
 	$('.arrow-left').on('click', function() {
-		$('#search-holder').animate({'left' : '+=100px'});
-		tracker--;
+		$('#search-holder').animate({'left' : '+=100px'}); // 100px was just what I needed.
+		tracker--;					   // Some simple math against each div width will get your px's
 		if (tracker === 1) {
 			$('.arrow-left').fadeOut();
 		}

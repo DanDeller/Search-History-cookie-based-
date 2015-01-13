@@ -16,9 +16,10 @@ function readSearchHistory() {
 	\*/
 	
 	// read & split the cookies 
-	var cookies = getCookie('searchHistory');
+	var cookies      = getCookie('searchHistory');
 	var cookiesArray = cookies.split(',');
-	var searchBox = document.getElementById('search-holder');
+	var searchBox    = document.getElementById('search-holder');
+	var output       = ''; 
 
 	// iterate over each search and create page elements for each one
 	for (var i = 0; i < cookiesArray.length; i++) {
@@ -26,23 +27,27 @@ function readSearchHistory() {
 		var clean = cookiesArray[i].split('-');
 		// clean it up further by joining the string
 		var cleaner = clean.join(' ');
+		// create array we need for each part of the name
+		var cleanest = cleaner.split(' ');
+		// create object to store parts of the name
+		var name = {
+			firstName : cleanest[0],
+			lastName  : cleanest[1],
+			state     : cleanest[2]
+		}; 
 
-		// create a div for each search box
-		var divIt = document.createElement('div');
-		    divIt.className = 'searchIt';
-		    searchBox.appendChild(divIt);
+		// create output string 
+		output += '<div class="searchIt">' +
+					'<p class="nameIt">Name:</p>' +
+					'<p class="fName">' + cleanest[0] + '</p>' +
+					'<p class="lName">' + cleanest[1] + '</p>' +
+					'<p class="state">' + cleanest[2] + '</p>' +
+						<img src="/assets/shared/img/register/checkmark.png">' +
+					'<p class="reportIncluded">Report Included</p>' +
+				'</div>'
 
-		// create close icon for each search box
-		var closeIt = document.createElement('p');
-		    closeIt.className = 'closeIt';
-		    closeIt.innerHTML = 'x';
-		    divIt.appendChild(closeIt);
-
-		// create a text node for each search box
-		var textIt = document.createElement('p');
-		    textIt.className = 'textIt';
-		    textIt.innerHTML = cleaner;
-		    divIt.appendChild(textIt);
+		// set output string to page element
+		searchBox.innerHTML = output;
 	}
 
 	// if cookieArray is 3 or less, hide the arrows

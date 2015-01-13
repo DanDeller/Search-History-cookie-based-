@@ -12,7 +12,7 @@ function readSearchHistory() {
 	 *	SearchHistory function to capture user searches and store them
 	 *	into a cookie for later use.
 	 *
-	 *	You'll also need a states object ex.
+	 *	You'll also need an object to hold states ex.
 	 *	var states = {
 	 *		'CA' : 'California'	
 	 *	} 	

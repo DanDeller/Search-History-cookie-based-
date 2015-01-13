@@ -36,10 +36,6 @@ function readSearchHistory() {
 			state     : cleanest[2]
 		};
 
-		// make states capitalized
-		var lowerCaseIt = name.state;
-		var lower       = lowerCaseIt.toLowerCase();
-
 		// create a way to filter states so they display as full names and not abbreviations
 		for (key in test) {
 			if (test.hasOwnProperty(key)) {

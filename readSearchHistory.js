@@ -9,10 +9,10 @@ if (getCookie('searchHistory')) {
 function readSearchHistory() {
 
 	/*\
-	 *		SearchHistory function to capture user searches and store them
-	 *		into a cookie for later use.
+	 *	SearchHistory function to capture user searches and store them
+	 *	into a cookie for later use.
 	 *
-	 *		The initial part of this JS is located in the setSearchHistory file.
+	 *	The initial part of this JS is located in the setSearchHistory file.
 	\*/
 	
 	// read & split the cookies 

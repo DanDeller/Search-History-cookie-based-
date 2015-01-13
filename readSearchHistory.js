@@ -34,21 +34,40 @@ function readSearchHistory() {
 			firstName : cleanest[0],
 			lastName  : cleanest[1],
 			state     : cleanest[2]
-		}; 
+		};
+
+		// make states capitalized
+		var lowerCaseIt = name.state;
+		var lower       = lowerCaseIt.toLowerCase();
+
+		// create a way to filter states so they display as full names and not abbreviations
+		for (key in test) {
+			if (test.hasOwnProperty(key)) {
+				if (key === cleanest[2]) {
+					lower = test[key];
+				}
+			}
+		}
 
 		// create output string 
 		output += '<div class="searchIt">' +
-				'<p class="nameIt">Name:</p>' +
-				'<p class="fName">' + cleanest[0] + '</p>' +
-				'<p class="lName">' + cleanest[1] + '</p>' +
-				'<p class="state">' + cleanest[2] + '</p>' +
-				'<img src="/assets/shared/img/register/checkmark.png">' +
-				'<p class="reportIncluded">Report Included</p>' +
-			'</div>'
+								'<p class="nameIt">Name:</p>' +
+								'<p class="fName">' + cleanest[0] + '</p>' +
+								'<p class="lName">' + cleanest[1] + '</p>' +
+								'<p class="state">' + lower + '</p>' +
+								'<img class="checkMe" src="/assets/shared/img/register/checkmark.png">' +
+								'<p class="reportIncluded">Report Included</p>' +
+							'</div>';
 
 		// set output string to page element
 		searchBox.innerHTML = output;
 	}
+
+	// determine search holder width
+	var howMany = $('.searchIt').length;
+	var howWide = $('.searchIt').width() + 60;
+	var totalWidth = howMany * howWide;
+	$('#search-holder').css({'width' : totalWidth});
 
 	// if cookieArray is 3 or less, hide the arrows
 	if (cookiesArray.length <= 3) {

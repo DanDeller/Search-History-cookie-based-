@@ -31,16 +31,15 @@ function readSearchHistory() {
 		var cleanest = cleaner.split(' ');
 		// create object to store parts of the name
 		var name = {
-			firstName : cleanest[0],
-			lastName  : cleanest[1],
-			state     : cleanest[2]
+			fullName : cleanest[0] + ' ' + cleanest[1],
+			state    : cleanest[2]
 		};
 
 		// create a way to filter states so they display as full names and not abbreviations
 		for (key in test) {
 			if (test.hasOwnProperty(key)) {
 				if (key === cleanest[2]) {
-					lower = test[key];
+					name.state = test[key];
 				}
 			}
 		}
@@ -48,12 +47,11 @@ function readSearchHistory() {
 		// create output string 
 		output += '<div class="searchIt">' +
 				'<p class="nameIt">Name:</p>' +
-				'<p class="fName">' + cleanest[0] + '</p>' +
-				'<p class="lName">' + cleanest[1] + '</p>' +
-				'<p class="state">' + lower + '</p>' +
+				'<p class="fName">' + name.fullName + '</p>' +
+				'<p class="state">' + name.state + '</p>' +
 				'<img class="checkMe" src="/assets/shared/img/register/checkmark.png">' +
 				'<p class="reportIncluded">Report Included</p>' +
-		       	'</div>';
+			'</div>';
 
 		// set output string to page element
 		searchBox.innerHTML = output;

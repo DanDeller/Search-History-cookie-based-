@@ -48,7 +48,7 @@ function readSearchHistory() {
 				}
 			}
 		}
- 
+
 		// create output string 
 		output += '<div class="searchIt">' +
 				'<p class="nameIt">Name:</p>' +

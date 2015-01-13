@@ -1,16 +1,19 @@
 function setSearchHistory() {
 
 	/*\
-	 *   SearchHistory function to capture user searches and store them
-	 *   into a cookie for later use.
+	 *  	SearchHistory function to capture user searches and store them
+	 *  	into a cookie for later use.
 	 *
-	 *   The rest of the JS to pull the data can be found in the 
-	 *   readSearchHistory file.
+	 *   	The rest of the JS to pull the data can be found in the 
+	 *   	readSearchHistory file.
 	 *
-	 *   - Submit form 
-	 *   - Check whether searchHistory cookie exists
-	 *   - Read values from searchHistory cookie and store them into an array
-	 *   - Add new value into array and reset cookie
+	 *	NOTE: You WILL NEED to grab the functions to both set and read a cookie in javascript.
+	 *	      A quick google search will point you in the proper direction and you're good to go.
+	 *
+	 *	- Submit form 
+	 *   	- Check whether searchHistory cookie exists
+	 *   	- Read values from searchHistory cookie and store them into an array
+	 *   	- Add new value into array and reset cookie
 	\*/
 
 	// create initial array

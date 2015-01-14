@@ -41,10 +41,10 @@ function readSearchHistory() {
 		};
 
 		// create a way to filter states so they display as full names and not abbreviations
-		for (key in test) {
-			if (test.hasOwnProperty(key)) {
+		for (key in states) {
+			if (states.hasOwnProperty(key)) {
 				if (key === cleanest[2]) {
-					name.state = test[key];
+					name.state = states[key];
 				}
 			}
 		}
